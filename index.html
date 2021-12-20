@@ -398,7 +398,7 @@
 
 
 
-
+<!-- Модальное окно! Оставьте свои данные мы вам перезвоним -->
 <div data-modal class="backdrop is-hidden">
   <div class="modal-main">
     <button data-modal-close type="button" class="close">
@@ -406,6 +406,40 @@
         <use href="./images/icon/icons.svg#icon-close"></use>
       </svg>
     </button>
+
+
+    <h2 class="headline">Оставьте свои данные, мы вам перезвоним</h2>
+    
+    
+    <form class="js-speaker-form form-call-back" autocomplete="on">
+
+      <label for="name">Имя</label>
+      <input type="text" name="user-name" id="name" placeholder="Введите ваше имя" minlength="2" class="form-input" autofocus>
+
+      <label for="tel">Телефон</label>
+      <input type="tel" name="user-tel" id="tel" placeholder="Введите ваш номер телефона" title="+8 123 456 78 91" class="form-input">
+
+      <label for="email">Почта</label>
+      <input type="email" name="user-email" id="email" placeholder="Введите вашу почту" class="form-input">
+
+
+
+      <label for="comment">Комментарий</label>
+      <textarea name="comment" id="comment" rows="6" placeholder="Введите текст" class="form-input comment"></textarea>
+
+
+
+      <div class="agreement-aligin">
+        <input type="checkbox" name="agreement" value="agreement" id="agreement" checked>
+        <label for="agreement" class="agreement">Соглашаюсь с рассылкой и принимаю 
+        <a href="/"></a><span class="blue">Условия договора</span></a></label>
+      </div>
+
+      <button type="submit" class="button">Отправить</button>
+
+    </form>
+
+
   </div>
 </div>
 
@@ -413,7 +447,29 @@
 
 
 
+<!-- Подключение скрипта для работы модалки -->
 <script src="./js/modal.js"></script>
+
+
+
+<!-- Скрипт для временного изменения работы инпутов -->
+<script>
+  (() => {
+    document
+      .querySelector('.js-speaker-form')
+      .addEventListener('submit', e => {
+        e.preventDefault();
+
+        new FormData(e.currentTarget).forEach((value, name) =>
+          console.log(`${name}: ${value}`),
+        );
+
+        e.currentTarget.reset();
+      });
+  })();
+</script>
+
+
 </body>
 </html>
 

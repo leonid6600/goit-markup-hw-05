@@ -794,6 +794,7 @@ margin-left: 30px;
 /* Соц.сети иконки в футуре*/
 .social-icons-footer .icons{
     display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     width: 44px;
@@ -840,6 +841,8 @@ margin-left: 30px;
     transform: translate(-50%, -50%) scale(0.8);
 }
 
+
+/* Сама модалка */
 .modal-main{
     position: absolute;
     top: 50%;
@@ -848,15 +851,15 @@ margin-left: 30px;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
     width: 528px;
-    height: 581px;
-
+   
     background-color: var(--bg-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    padding: 20px;
+    padding: 40px;
 }
 
 
+/* Контент модалки */
 .modal-main .close{
     position: absolute;
     right: 8px;
@@ -869,10 +872,112 @@ margin-left: 30px;
     height: 30px;
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
+    fill: #000;
     background-color: var(--bg-color);
 
     cursor: pointer;
 }
+
+
+.modal-main .headline{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--title);
+    margin-bottom: 12px;
+}
+
+/* Формы внутри модалки */
+.form-call-back label{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+}
+
+.form-call-back .agreement{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+}
+
+.form-call-back .agreement-aligin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.form-call-back .agreement{
+    margin-left: 8px;
+}
+
+.form-call-back .blue{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.form-call-back .form-input{
+    display: block;
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    text-indent: 8px;
+}
+
+.form-call-back .form-input:not(:nth-last-child(-n+3)){
+    margin-bottom: 10px;
+}
+
+
+.form-call-back .comment{
+    resize: vertical;
+    height: 120px;
+}
+
+
+/* Отобразить валидное и невалидное заполнеие инпутов */
+/* .form-call-back .form-input:valid{
+    border: 1px solid green;
+}
+.form-call-back .form-input:invalid{
+    border: 1px solid red;
+}
+.form-input:not(:placeholder-shown){
+    border: 1px solid red;
+}
+.form-input:placeholder-shown{
+    border: 1px solid blue;
+} */
+
+
+
+.form-call-back .button{
+    display: block;
+    color: var(--bg-color);
+    background-color: var(--brand-color);
+    padding: 10px 32px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.06em;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-call-back .button:hover,
+.form-call-back .button:focus {
+    background-color:#188CE8;
+}
+
+
 
 
 /* .social-icons-footer .icons{
